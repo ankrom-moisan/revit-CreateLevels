@@ -1,0 +1,5 @@
+c:\users\derekw\documents\visual studio 2015\Projects\CreateLevels\CreateLevels\bin\Debug\CreateLevels.dll
+c:\users\derekw\documents\visual studio 2015\Projects\CreateLevels\CreateLevels\bin\Debug\CreateLevels.pdb
+c:\users\derekw\documents\visual studio 2015\Projects\CreateLevels\CreateLevels\obj\Debug\CreateLevels.dll
+c:\users\derekw\documents\visual studio 2015\Projects\CreateLevels\CreateLevels\obj\Debug\CreateLevels.pdb
+C:\Users\derekw\documents\visual studio 2015\Projects\CreateLevels\CreateLevels\obj\Debug\CreateLevels.csprojResolveAssemblyReference.cache

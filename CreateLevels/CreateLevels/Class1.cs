@@ -11,14 +11,15 @@ using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.UI.Selection;
 
 
+
+
 namespace CreateLevels
 {
     [Transaction(TransactionMode.Manual)]
-    //[Regeneration(RegenerationOption.Manual)]
 
-   
-    public class Command : IExternalCommand
+    class Command : IExternalCommand
     {
+        //private object document;
 
         public Result Execute(
             ExternalCommandData commandData,
@@ -31,33 +32,85 @@ namespace CreateLevels
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
-            using (Transaction trans = new Transaction(doc, "Level"))
             {
 
-                trans.Start();
-
-             
+                Level level = doc.Create.NewLevel(0);
+                if (null == level)
                 {
-                    double elevation = 20.0;
-
-                    Level level = doc.Create.NewLevel(elevation);
-                    if (null == level)
-                    {
-                        throw new Exception("Create a new level failed.");
-                    }
-                    // change the leve name
-                    level.Name = "New Level";
-
-                    return Result.Succeeded;
-
-                    trans.Commit();
+                    throw new Exception("Create new level failed.");
                 }
+                level.Name = "New Name";
+                ElementId nid = level.Id;
+
+                return level;
+
             }
 
         }
+
     }
+
 }
-        
-  
+
+
+
+
 
     
+
+        
+
+
+       
+        
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //    {
+    //        UIApplication uiapp = commandData.Application;
+    //        UIDocument uidoc = uiapp.ActiveUIDocument;
+    //        Application app = uiapp.Application;
+    //        Document doc = uidoc.Document;
+
+//        using (Transaction trans = new Transaction(doc, "Level"))
+//        {
+
+//            trans.Start();
+
+
+//            {
+//                double elevation = 20.0;
+
+//                Level level = doc.Create.NewLevel(elevation);
+//                if (null == level)
+//                {
+//                    throw new Exception("Create a new level failed.");
+//                }
+//                // change the leve name
+//                level.Name = "New Level";
+
+//                return Result.Succeeded;
+
+//                trans.Commit();
+//            }
+//        }
+
+//    }
+//}
+
+
+
+
